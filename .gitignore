@@ -212,3 +212,4 @@ dist
 .pnp.*
 
 **/.temp
+**/dist
