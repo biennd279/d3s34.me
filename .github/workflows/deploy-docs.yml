@@ -5,7 +5,7 @@ on:
   push:
     branches:
       # make sure this is the branch you are using
-      - main
+      - master
 
 jobs:
   deploy-gh-pages:
@@ -17,8 +17,6 @@ jobs:
           fetch-depth: 0
           # if your docs needs submodules, uncomment the following line
           # submodules: true
-
-
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -34,10 +32,12 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=4096
         run: yarn run docs:build
 
-      - name: Deploy Docs
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Copy dist to VPS
+        uses: appleboy/scp-action@master
         with:
-          # This is the branch where the docs are deployed to
-          branch: gh-pages
-          folder: docs/.vuepress/dist
-
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          port: 22
+          source: "dist/,!node_modules"
+          target:  ${{ secrets.REMOTE_TARGET }}
