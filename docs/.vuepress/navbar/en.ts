@@ -1,17 +1,11 @@
 import { navbar } from "vuepress-theme-hope";
+import { getChildren } from "../utils";
 
 export const en = navbar([
   "/",
-  "/home",
-  { text: "Guide", icon: "creative", link: "/guide/" },
-  {
-    text: "Theme Docs",
-    icon: "note",
-    link: "https://vuepress-theme-hope.github.io/v2/",
-  },
-  { text: "CTF", link: "ctf" },
-  { text: "hackthebox", link:"htb" },
-  { text: "Wiki", link:"wiki" },
-  { text: "Blog", link:"blog" },
+  { text: "CTF", link: "ctf", children: getChildren("ctf") },
+  { text: "hackthebox", link:"htb", children: getChildren("htb") },
+  { text: "Wiki", link:"wiki", children: getChildren("wiki") },
+  { text: "Blog", link:"blog", children: getChildren("blog") },
   { text: "About Me", link: "about" }
 ]);

@@ -22,9 +22,9 @@ export default hopeTheme({
 
   blog: {
     medias: {
-      Email: "https://example.com",
-      GitHub: "https://example.com",
-      Gitlab: "https://example.com",
+      Email: "https://ctf.d3s34.me/",
+      GitHub: "https://github.com/biennd279/",
+      Gitlab: "https://gitlab.com/biennd279/",
     },
   },
 
@@ -41,8 +41,7 @@ export default hopeTheme({
       displayFooter: true,
 
       blog: {
-        description: "A FrontEnd programmer",
-        intro: "/intro.html",
+        description: "d3s34's blog",
       },
     },
   },
