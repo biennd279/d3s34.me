@@ -4,7 +4,6 @@ import { getChildren } from "../utils";
 export const en = sidebar({
   "/": [
     "",
-    "slide",
     { text: "CTF", link: "ctf", children: getChildren("ctf") },
     { text: "hackthebox", link:"htb", children: getChildren("htb") },
     { text: "Wiki", link:"wiki", children: getChildren("wiki") },
