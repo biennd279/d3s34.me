@@ -9,6 +9,6 @@ export const en = sidebar({
     { text: "hackthebox", link:"htb", children: getChildren("htb") },
     { text: "Wiki", link:"wiki", children: getChildren("wiki") },
     { text: "Blog", link:"blog", children: getChildren("blog") },
-    { text: "About Me", link: "about" }
+    { text: "About Me", link: "/about" }
   ],
 });

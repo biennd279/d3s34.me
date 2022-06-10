@@ -6,4 +6,3 @@ title: Blog Home
 heroImage: /logo.svg
 heroFullScreen: true
 ---
-
