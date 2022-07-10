@@ -1,17 +1,39 @@
-import { defineUserConfig } from "vuepress";
-import theme from "./theme";
+import { defineUserConfig } from 'vuepress'
+import {recoTheme} from "vuepress-theme-reco";
+import {getChildren} from "./ultis";
 
 export default defineUserConfig({
-  base: "/",
+    theme: recoTheme({
+        autoSetCategory: true,
+        autoAddCategoryToNavbar: true,
+        series: {
+            "/": [
+                {
+                    text: "Home",
+                    children: ["/"]
+                },
+                {
+                    text: "CTF",
+                    children: getChildren("ctf")
+                },
+                {
+                    text: "Hack The Box",
+                    children: getChildren("htb")
+                },
+                {
+                    text: "Wiki",
+                    children: getChildren("wiki")
+                },
+                {
+                    text: "Blog",
+                    children: getChildren("blog")
+                },
 
-  locales: {
-    "/": {
-      lang: "en-US",
-      title: "d3s34's blog",
-      description: "Blog of d3s34",
+            ]
+        }
+    }),
+    extendsMarkdown: md => {
+        const mathjax3 = require('markdown-it-mathjax3')
+        md.use(mathjax3)
     }
-  },
-
-  theme,
-});
-
+})
