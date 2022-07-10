@@ -1,5 +1,5 @@
 import { sidebar } from "vuepress-theme-hope";
-import { getChildren } from "../utils";
+import {getChildren} from "../ultis";
 
 export const en = sidebar({
   "/": [
